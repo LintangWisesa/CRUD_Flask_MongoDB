@@ -26,7 +26,7 @@
 
 #
 
-2. Clone this repo. Edit __database.yaml__ file according to your database configuration, then install all the packages needed. In this project I'm using __flask__, __flask_cors__ & __pymongo__:
+2. Clone this repo. Insert your __database URI__ to database.yaml file, then install all the packages needed. In this project I'm using __flask__, __flask_cors__ & __pymongo__:
     ```bash
     $ git clone https://github.com/LintangWisesa/CRUD_Flask_MongoDB.git
     $ cd CRUD_Flask_MongoDB
