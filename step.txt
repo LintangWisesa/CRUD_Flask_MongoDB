@@ -11,7 +11,7 @@
     
     > use lin_flask
     > db.createUser({user:'lintang', pwd:'1234', roles:['readWrite', 'dbAdmin']})
-    > db.createCollection('users)
+    > db.createCollection('users')
 
 2. run server
     $ python app.py
