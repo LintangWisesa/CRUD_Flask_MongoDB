@@ -77,7 +77,22 @@ def onedata(id):
 
     # UPDATE a data by id
     if request.method == 'PUT':
-        return 'PUT'
+        body = request.json
+        name = body['name']
+        age = body['age']
+
+        db['users'].update_one(
+            {'_id': ObjectId(id)},
+            {
+                "$set": {
+                    "name":name,
+                    "age":age
+                }
+            }
+        )
+
+        print('\n # Update successful # \n')
+        return jsonify({'status': 'Data id: ' + id + ' is updated!'})
 
 if __name__ == '__main__':
     app.debug = True
