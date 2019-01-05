@@ -51,8 +51,8 @@ def data():
         print(dataJson)
         return jsonify(dataJson)
 
-@app.route('/data/<string:objid>', methods=['GET', 'DELETE', 'PUT'])
-def onedata(objid):
+@app.route('/data/<string:id>', methods=['GET', 'DELETE', 'PUT'])
+def onedata(id):
 
     # GET a specific data by id
     if request.method == 'GET':
