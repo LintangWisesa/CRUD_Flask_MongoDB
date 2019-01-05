@@ -6,6 +6,13 @@
     $ cd C:\Program Files\MongoDB\Server\3.6\bin
     $ mongo
 
+2. [optional] you can create db & collection first
+    or let pyMongo do this for you after run the app.
+    
+    > use lin_flask
+    > db.createUser({user:'lintang', pwd:'1234', roles:['readWrite', 'dbAdmin']})
+    > db.createCollection('users)
+
 2. run server
     $ python app.py
 
