@@ -36,7 +36,20 @@ def data():
     
     # GET all data from database
     if request.method == 'GET':
-        return 'GET'
+        allData = db['users'].find()
+        dataJson = []
+        for data in allData:
+            id = data['_id']
+            name = data['name']
+            age = data['age']
+            dataDict = {
+                'id': str(id),
+                'name': name,
+                'age': age
+            }
+            dataJson.append(dataDict)
+        print(dataJson)
+        return jsonify(dataJson)
 
 @app.route('/data/<string:objid>', methods=['GET', 'DELETE', 'PUT'])
 def onedata(objid):
