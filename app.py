@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from pymongo import MongoClient
+from bson.objectid import ObjectId
 from flask_cors import CORS
 import yaml
 
@@ -56,7 +57,17 @@ def onedata(id):
 
     # GET a specific data by id
     if request.method == 'GET':
-        return 'GET'
+        data = db['users'].find_one({'_id': ObjectId(id)})
+        id = data['_id']
+        name = data['name']
+        age = data['age']
+        dataDict = {
+            'id': str(id),
+            'name': name,
+            'age': age
+        }
+        print(dataDict)
+        return jsonify(dataDict)
         
     # DELETE a data
     if request.method == 'DELETE':
