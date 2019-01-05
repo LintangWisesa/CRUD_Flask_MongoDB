@@ -1,0 +1,13 @@
+1. Activate MongoDB server:
+    $ cd C:\Program Files\MongoDB\Server\3.6\bin
+    $ mongod 
+
+   Open new terminal, type:
+    $ cd C:\Program Files\MongoDB\Server\3.6\bin
+    $ mongo
+
+2. run server
+    $ python app.py
+
+   it will automatically create database & collection for you!
+   
