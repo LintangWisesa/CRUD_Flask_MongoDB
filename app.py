@@ -71,7 +71,9 @@ def onedata(id):
         
     # DELETE a data
     if request.method == 'DELETE':
-        return 'DELETE'
+        db['users'].delete_many({'_id': ObjectId(id)})
+        print('\n # Deletion successful # \n')
+        return jsonify({'status': 'Data id: ' + id + ' is deleted!'})
 
     # UPDATE a data by id
     if request.method == 'PUT':
